@@ -20,16 +20,17 @@ public class WDriverWrapper {
 		String browser="ch";
 		if(browser.equalsIgnoreCase("ch"))
 		{
-			System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\driver\\chromedriver.exe");
-			driver= new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
+			driver = new ChromeDriver();
+			
 		}else if(browser.equalsIgnoreCase("ff"))
 		{
-			System.setProperty("webdriver.gecko.driverl", "src\\test\\resources\\driver\\geckodriver.exe");
-			driver= new FirefoxDriver();
+			System.setProperty("webdriver.gecko.driver", "src/test/resources/driver/geckodriver.exe");
+			driver = new FirefoxDriver();
 		}else
 		{
-			//System.setProperty("webdriver.gecko.driverl", "src\\test\\resources\\driver\\geckodriver.exe");
-			driver= new InternetExplorerDriver();
+			System.setProperty("webdriver.ie.driver", "src/test/resources/driver/iedriverserver.exe");
+			driver = new InternetExplorerDriver();
 		}
 		
 		driver.manage().window().maximize();
